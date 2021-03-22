@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+if [ -z "$key" ]; then
+    echo "Error! "
+    echo "Pass your VimGolf key into the container as an environment variable:\n  -e \"key=caa2d86f5...\""
+    echo "ex:"
+    echo 'docker run --rm -it -e "key=vimgolf_personal_key" hettomei/vimgolf vimgolf_challenge_ID'
+    exit 1
+fi
+
+echo $key | vimgolf setup
+vimgolf put "$@"
