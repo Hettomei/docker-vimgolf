@@ -4,7 +4,7 @@ MAINTAINER hettomei
 
 RUN apt-get update && apt-get install -y vim
 
-RUN gem install vimgolf
+RUN gem install vimgolf -v 0.5.0
 
 COPY wrapvimgolf /usr/local/bin/wrapvimgolf
 
